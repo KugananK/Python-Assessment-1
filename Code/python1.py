@@ -330,12 +330,11 @@ eight(8)
 	# Take a look at the documentation for Strings, List and range.
 
 def nine(inputString, char):
-	inputString.replace(" ", "")	
-	inputString.find(char)
-	print(inputString)
+	print(inputString.replace(" ","").find(char))
 	return ""
 
-nine("as dfg", "d")
+nine("This is a Sentence","s")
+
 
 	# <QUESTION 10>
 
