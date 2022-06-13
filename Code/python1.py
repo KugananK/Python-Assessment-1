@@ -35,17 +35,16 @@
 	# What was the name of the function we have seen to check the length of a container?  Use your CLI to access the Python documentation and get help(len).
 
 def one(input1, input2):
-	result = 0
 	if len(input1) > len(input2):
 		result = input1
 		print(result)
-	elif len(input2) == len(input1):
+	elif len(input1) == len(input2):
 		result = input1 + " " + input2
 		print(result)
 	else:
 		result = (input2)
 		print(result)
-	return "result"
+	return result
 
 # input1 = input(str("First string: "))
 # input2 = input(str("Second string: "))
@@ -156,7 +155,24 @@ three(75)
 	# help(int) for working with numbers and help(str) for working with Strings.
 
 def four(arg1):
-	return ""
+	x = "0"
+	sum = 0
+	for ch in arg1:
+		if(ch.isdigit()):
+			x += ch
+		else:
+			sum += int(x)
+			x = "0"
+	print(sum + int(x))
+	return sum + int(x)
+
+four("55 72 86")
+four("15 72 80 164")
+four("555 72 86 45 10")
+four("98 63 34 1 13")
+four("98 107 415")
+
+	
 
 	# <QUESTION 5>
 
@@ -205,7 +221,29 @@ def five(input):
 
 
 def six(input):
-	return ""
+	if "cie" in input:
+		print(False)
+		return False
+	elif "cei" in input:
+		print(True)
+		return True
+	elif "ei" in input:
+		print(False)
+		return False
+	elif "ie" in input:
+		print(True)
+		return True
+	else:
+		print(True)
+		return True
+
+
+six("ceiling")
+six("believe")
+six("glacier")
+six("height")
+six("receive")
+	
 	
 	
 		
