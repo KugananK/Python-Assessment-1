@@ -86,6 +86,7 @@ one("fire", "rib")
 	# Use your CLI to access the Python documentation and get help manipulating strings - help(str).
 
 def two(input):
+	
 	return ""
 
 
@@ -329,6 +330,7 @@ eight(8)
 	# Take a look at the documentation for Strings, List and range.
 
 def nine(inputString, char):
+	
 	return ""
 
 
