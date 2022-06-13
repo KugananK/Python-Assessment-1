@@ -35,7 +35,29 @@
 	# What was the name of the function we have seen to check the length of a container?  Use your CLI to access the Python documentation and get help(len).
 
 def one(input1, input2):
-	return ""
+	result = 0
+	if len(input1) > len(input2):
+		result = input1
+		print(result)
+	elif len(input2) == len(input1):
+		result = input1 + " " + input2
+		print(result)
+	else:
+		result = (input2)
+		print(result)
+	return "result"
+
+# input1 = input(str("First string: "))
+# input2 = input(str("Second string: "))
+# can be added to get custom inputs ^
+
+one("hi", "hello")
+one("three", "two")
+one("three", "hello")
+one("echo", "print")
+one("fire", "rib")
+
+
 	
 
 
@@ -44,7 +66,7 @@ def one(input1, input2):
 
 	# <QUESTION 2>
 
-    # Return the string that is between the first and last appearance of "bert" in the given string
+    # Return the string that is between the first and last appearance of "bert" in the given string 
 	
 	# Return the empty string "" if there is not 2 occurances of "bert" 
 	
@@ -73,8 +95,8 @@ def two(input):
 	# <QUESTION 3>
 
     # given a number
-	# if this number is divisible by 3 return "fizz"
-	# if this number is divisible by 5 return "buzz"
+	# if this number is divisible by 3 return "fizz" done
+	# if this number is divisible by 5 return "buzz" done
 	# if this number is divisible by both 3 and 5 return "fizzbuzz"
 	# if this number is not divisible by 3 or 5 return "null"
 	    
@@ -90,8 +112,26 @@ def two(input):
 	# No Hints for this question
 
 def three(arg1):
-	return ""
+	fizzbuzz = 0
+	if arg1 % 3 == 0 and arg1 % 5 != 0:
+		fizzbuzz = "fizz"
+		print(fizzbuzz)
+	elif arg1 % 5 == 0 and arg1 % 3 != 0:
+		fizzbuzz = "buzz"
+		print(fizzbuzz)
+	elif arg1 %3 == 0 and arg1 % 5 == 0:
+		fizzbuzz = "fizzbuzz"
+		print(fizzbuzz)
+	else:
+		fizzbuzz = "null"
+		print(fizzbuzz)
+	return fizzbuzz
 
+three(3)
+three(10)
+three(15)
+three(8)
+three(75)
 
 	# <QUESTION 4>
 
@@ -187,7 +227,20 @@ def six(input):
 #    return ch.upper() in ['A', 'E', 'I', 'O', 'U'] 
 
 def seven(input): 
-	pass
+	vowels = 0
+	the_vowels = ["a", "e", "i", "o", "u"]
+	for letter in input.lower():
+		if letter in the_vowels:
+			vowels += 1
+	print(vowels)
+	return vowels
+
+seven("Hello")
+seven("hEelLoooO")
+seven("WhitEboarD")
+seven("as")
+seven("pass")
+
    
 
 	# <QUESTION 8>
@@ -206,7 +259,17 @@ def seven(input):
 	# You may need to create a list of numbers from 0 to i, take a look at help(range).
 
 def eight(input):
-	return ""
+	x = 1
+	for i in range(1, input+1):
+		x *= i
+	print(x)
+	return x
+
+eight(1)
+eight(3)
+eight(4)
+eight(6)
+eight(8)
 	
 
 	# <QUESTION 9>
