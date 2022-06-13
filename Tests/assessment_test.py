@@ -42,6 +42,7 @@ def test_six():
     assert python1.six("glacier") == False
     assert python1.six("height") == False
     assert python1.six("receive") == True
+    assert python1.six("kajan") == True
 
 def test_seven():
     assert python1.seven("Hello") == 2 

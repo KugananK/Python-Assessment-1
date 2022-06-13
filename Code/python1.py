@@ -86,8 +86,21 @@ one("fire", "rib")
 	# Use your CLI to access the Python documentation and get help manipulating strings - help(str).
 
 def two(input):
-	
-	return ""
+	n = 0
+	lower_input = input.lower()
+	start_of_berts = []
+	while n < len(input):
+		if lower_input[n] == "b":
+			if lower_input[n:n+4] == "bert":
+				start_of_berts.append(n)
+				n += 4
+				continue
+		n += 1
+	if len(start_of_berts) < 2:
+		return ""
+	else:
+		output = input[start_of_berts[0]+4:start_of_berts[-1]]
+		return output
 
 
 
@@ -154,18 +167,31 @@ three(75)
 	# <HINT>
 
 	# help(int) for working with numbers and help(str) for working with Strings.
-
+#Answers
 def four(arg1):
-	x = "0"
-	sum = 0
-	for ch in arg1:
-		if(ch.isdigit()):
-			x += ch
-		else:
-			sum += int(x)
-			x = "0"
-	print(sum + int(x))
-	return sum + int(x)
+	numList = arg1.split()
+	largest = 0
+	for x in numList:
+		size = 0
+		strNum = str(x)
+		for y in range(len(strNum)):
+			size += int(strNum[y])
+			if size > largest: 
+				largest = size
+
+	return largest
+
+# def four(arg1):
+# 	x = "0"
+# 	sum = 0
+# 	for ch in arg1:
+# 		if(ch.isdigit()):
+# 			x += ch
+# 		else:
+# 			sum += int(x)
+# 			x = "0"
+# 	print(sum + int(x))
+# 	return sum + int(x)
 
 four("55 72 86")
 four("15 72 80 164")
@@ -201,7 +227,13 @@ four("98 107 415")
 	# help(str) and help(list), you might also need to use a function that can create a list of numbers for you, try help(range).
 
 def five(input):
-	return ""
+	listFiles = input.split(",")
+	length = len(listFiles)
+	unsafe = []
+	for encrypt in range(2, length, 4):
+		if listFiles[encrypt] == "False" and listFiles[(encrypt-2)] not in unsafe:
+			unsafe.append(listFiles[(encrypt-2)])
+	return unsafe
 
 	# <QUESTION 6>
 
@@ -238,12 +270,25 @@ def six(input):
 		print(True)
 		return True
 
+# def six(input):
+# 	for letter in range(len(input)-1):
+# 		if input[letter] == "i" and input[letter+1] == "e":
+# 			if input[letter-1] == "c":
+# 				return False
+# 			else:
+# 				return True
+# 		elif input[letter] == "e" and input[letter+1] == "i":
+# 			if input[letter-1] == "c":
+# 				reuturn True
+# 			else:
+# 				return False
 
 six("ceiling")
 six("believe")
 six("glacier")
 six("height")
 six("receive")
+six("kajan")
 	
 	
 	
@@ -329,9 +374,22 @@ eight(8)
 
 	# Take a look at the documentation for Strings, List and range.
 
+
+# Answers
 def nine(inputString, char):
-	print(inputString.replace(" ","").find(char))
-	return ""
+	splitInput = inputString.split()
+	joinInput = "".join(splitInput)
+	word_length = len(joinInput)
+	for letter in range(word_length):
+		if joinInput[letter] == char:
+			return letter + 1
+	return -1
+
+
+# def nine(inputString, char):
+# 	print(inputString.replace(" ","").find(char))
+# 	return ""
+
 
 nine("This is a Sentence","s")
 nine("This is a Sentence","S")
@@ -358,4 +416,11 @@ nine("I LOVE PYTHON", "L")
 	# How do we find the length of a container, take a look at help(len), you will also need to look at help(str) for String manipulation.
  
 def ten(string, int, char): 
-	return ""
+	str_lcases = string.lower()
+	word_length = len(str_lcases)
+	if int <= word_length:
+		if str_lcases[int-1] == char:
+			return True
+		else:
+			return False
+	return False
