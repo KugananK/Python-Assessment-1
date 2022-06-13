@@ -334,6 +334,10 @@ def nine(inputString, char):
 	return ""
 
 nine("This is a Sentence","s")
+nine("This is a Sentence","S")
+nine("Fridge for sale","z")
+nine("I love Python", "L")
+nine("I LOVE PYTHON", "L")
 
 
 	# <QUESTION 10>
